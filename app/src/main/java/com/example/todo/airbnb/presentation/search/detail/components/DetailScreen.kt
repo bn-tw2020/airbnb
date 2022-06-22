@@ -1,4 +1,4 @@
-package com.example.todo.airbnb.presentation.search.detail
+package com.example.todo.airbnb.presentation.search.detail.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -28,7 +28,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import coil.compose.rememberImagePainter
 import com.example.todo.airbnb.R
@@ -40,8 +40,8 @@ import com.example.todo.airbnb.presentation.main.components.Destinations
 import com.example.todo.airbnb.presentation.main.components.HomeSections
 import com.example.todo.airbnb.presentation.reservation.ReservationViewModel
 import com.example.todo.airbnb.presentation.search.SearchViewModel
-import com.example.todo.airbnb.presentation.search.detail.components.CustomDialog
-import com.example.todo.airbnb.presentation.search.detail.components.DialogContent
+import com.example.todo.airbnb.presentation.search.detail.DetailUiState
+import com.example.todo.airbnb.presentation.search.detail.DetailViewModel
 import com.example.todo.airbnb.presentation.search.searchresult.ResultViewModel
 import java.text.DecimalFormat
 
@@ -53,7 +53,7 @@ fun DetailScreen(
     reservationViewModel: ReservationViewModel,
     id: Int,
 ) {
-    val viewModel = viewModel<DetailViewModel>()
+    val viewModel: DetailViewModel = hiltViewModel()
     viewModel.getDetailAccommodation(id)
     when (val state = viewModel.detailUiState.value) {
         is DetailUiState.DetailAccommodation -> {

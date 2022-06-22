@@ -9,8 +9,9 @@ import com.example.todo.airbnb.domain.model.Search
 import com.example.todo.airbnb.domain.repository.MainRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import javax.inject.Inject
 
-class MainRepositoryImpl : MainRepository {
+class MainRepositoryImpl @Inject constructor() : MainRepository {
 
     private val dummyImage =
         "https://a0.muscache.com/im/pictures/2f13349d-879d-43c6-83e3-8e5679291d53.jpg?im_w=480"

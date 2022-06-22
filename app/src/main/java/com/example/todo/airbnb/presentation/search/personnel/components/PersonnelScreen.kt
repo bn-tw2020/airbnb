@@ -19,7 +19,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.todo.airbnb.R
 import com.example.todo.airbnb.common.components.ToastMessage
@@ -35,7 +35,7 @@ fun PersonnelScreen(
     navController: NavController,
     searchViewModel: SearchViewModel,
 ) {
-    val viewModel = viewModel<PersonnelViewModel>()
+    val viewModel: PersonnelViewModel = hiltViewModel()
     val uiState by viewModel.personnelUiState
 
     if (uiState.showAlertMessage) {

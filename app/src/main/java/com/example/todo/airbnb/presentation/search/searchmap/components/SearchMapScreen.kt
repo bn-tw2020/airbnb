@@ -28,6 +28,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.rememberImagePainter
 import com.example.todo.airbnb.R
 import com.example.todo.airbnb.common.components.HandleImageResult
@@ -43,7 +44,7 @@ import java.text.DecimalFormat
 
 @ExperimentalPagerApi
 @Composable
-fun SearchMapScreen(viewModel: ResultViewModel = ResultViewModel()) {
+fun SearchMapScreen(viewModel: ResultViewModel = hiltViewModel()) {
     SearchMapContent(
         onClickFavorite = { viewModel.onClickFavorite(it) },
         accommodation = viewModel.result.value

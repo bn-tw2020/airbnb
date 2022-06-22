@@ -7,8 +7,9 @@ import com.example.todo.airbnb.data.model.date.MonthOfYear
 import com.example.todo.airbnb.domain.repository.DateRepository
 import java.time.LocalDate
 import java.time.temporal.TemporalAdjusters
+import javax.inject.Inject
 
-class DateRepositoryImpl() : DateRepository {
+class DateRepositoryImpl @Inject constructor() : DateRepository {
 
     override fun getDate(): CalendarYear {
         return MonthOfYear.values().map {

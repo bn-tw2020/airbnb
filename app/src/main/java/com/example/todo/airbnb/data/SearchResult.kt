@@ -6,5 +6,5 @@ data class SearchResult(
     val review: Int,
     val title: String,
     val dayPrice: Int,
-    val totalPrice: Int
+    val totalPrice: Int,
 )

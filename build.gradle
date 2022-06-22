@@ -3,6 +3,13 @@ buildscript {
         compose_version = '1.0.1'
         retrofit2_version = '2.9.0'
     }
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.google.dagger:hilt-android-gradle-plugin:2.38.1"
+    }
 }// Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
     id 'com.android.application' version '7.1.2' apply false

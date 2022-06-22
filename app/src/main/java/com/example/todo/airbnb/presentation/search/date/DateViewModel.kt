@@ -6,12 +6,14 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import com.example.todo.airbnb.data.model.date.DaySelected
 import com.example.todo.airbnb.data.model.date.DaySelected.Companion.DaySelectedEmpty
-import com.example.todo.airbnb.data.repository.DateRepositoryImpl
 import com.example.todo.airbnb.domain.repository.DateRepository
 import com.example.todo.airbnb.presentation.search.date.components.DatesSelectedState
 import com.example.todo.airbnb.presentation.search.date.components.DaySelectedStatus
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class DateViewModel(private val datesRepository: DateRepository = DateRepositoryImpl()) :
+@HiltViewModel
+class DateViewModel @Inject constructor(private val datesRepository: DateRepository) :
     ViewModel() {
 
     private val calendarYear = datesRepository.getDate()

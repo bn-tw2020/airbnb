@@ -4,13 +4,15 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.todo.airbnb.data.repository.MainRepositoryImpl
 import com.example.todo.airbnb.domain.repository.MainRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class DetailViewModel(
-    private val repository: MainRepository = MainRepositoryImpl(),
+@HiltViewModel
+class DetailViewModel @Inject constructor(
+    private val repository: MainRepository,
 ) : ViewModel() {
 
     private val _detailUiState = mutableStateOf<DetailUiState>(DetailUiState.Loading)

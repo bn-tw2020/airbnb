@@ -7,18 +7,20 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.todo.airbnb.data.Accommodations
 import com.example.todo.airbnb.data.Travel
-import com.example.todo.airbnb.data.repository.MainRepositoryImpl
 import com.example.todo.airbnb.domain.model.Search
 import com.example.todo.airbnb.domain.repository.MainRepository
 import com.example.todo.airbnb.presentation.search.main.SearchWidgetState
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class SearchViewModel(
-    private val repository: MainRepository = MainRepositoryImpl(),
+@HiltViewModel
+class SearchViewModel @Inject constructor(
+    private val repository: MainRepository,
 ) : ViewModel() {
 
     private val _searchWidgetState: MutableState<SearchWidgetState> =
@@ -42,7 +44,6 @@ class SearchViewModel(
 
     init {
         getTravelLocations()
-        getSearchLocations("양재")
         getAccommodations()
     }
 

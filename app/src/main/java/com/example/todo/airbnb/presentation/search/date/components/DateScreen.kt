@@ -9,7 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.todo.airbnb.data.model.date.CalendarDay
 import com.example.todo.airbnb.data.model.date.CalendarMonth
@@ -23,7 +23,7 @@ import com.example.todo.airbnb.ui.theme.Gray
 
 @Composable
 fun DateScreen(navController: NavController, viewModel: SearchViewModel) {
-    val dateViewModel: DateViewModel = viewModel()
+    val dateViewModel: DateViewModel = hiltViewModel()
     val dateState = dateViewModel.dates.value
 
     CalendarContent(

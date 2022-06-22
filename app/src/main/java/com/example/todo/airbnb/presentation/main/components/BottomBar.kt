@@ -16,7 +16,7 @@ import com.example.todo.airbnb.presentation.reservation.ReservationViewModel
 import com.example.todo.airbnb.presentation.reservation.components.ReservationScreen
 import com.example.todo.airbnb.presentation.search.SearchViewModel
 import com.example.todo.airbnb.presentation.search.date.components.DateScreen
-import com.example.todo.airbnb.presentation.search.detail.DetailScreen
+import com.example.todo.airbnb.presentation.search.detail.components.DetailScreen
 import com.example.todo.airbnb.presentation.search.fare.components.FareScreen
 import com.example.todo.airbnb.presentation.search.main.SearchScreen
 import com.example.todo.airbnb.presentation.search.personnel.components.PersonnelScreen
@@ -178,7 +178,7 @@ private fun selectNavigation(
     item: HomeSections,
 ): Boolean {
     return when (item.route) {
-        "검색" -> currentRoute == Destinations.searchResult
+        "검색" -> currentRoute == searchResult
         else -> false
     }
 }

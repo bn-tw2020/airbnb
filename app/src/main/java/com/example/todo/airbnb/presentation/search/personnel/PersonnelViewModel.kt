@@ -4,8 +4,11 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import com.example.todo.airbnb.domain.model.Personnel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class PersonnelViewModel : ViewModel() {
+@HiltViewModel
+class PersonnelViewModel @Inject constructor() : ViewModel() {
 
     private val _personnelUiState = mutableStateOf(PersonnelUiState.defaultOf())
     val personnelUiState: State<PersonnelUiState> get() = _personnelUiState

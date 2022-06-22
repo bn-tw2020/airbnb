@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Airbnb"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+        android:name=".presentation.AirbnbApplication">
         <activity
             android:name=".presentation.main.MainActivity"
             android:exported="true"
@@ -26,7 +27,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_map"/>
+            android:value="@string/google_map" />
     </application>
 
 </manifest>

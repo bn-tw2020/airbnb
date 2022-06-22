@@ -22,7 +22,6 @@ import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import com.example.todo.airbnb.domain.model.AccommodationResult
 import com.example.todo.airbnb.domain.model.Search
-import com.example.todo.airbnb.presentation.search.detail.BlackButton
 import java.text.DecimalFormat
 
 @Composable
